@@ -17,4 +17,8 @@ Y=dataset.iloc[:,3].values
 
 from sklearn.preprocessing import Imputer
 
-imputer=Imputer(missing_value='NaN',strategy="mean")
+imputer=Imputer(missing_value='NaN',strategy="mean", axis=0)
+
+imputer=imputer.fit(X[:,1:3])
+
+X[:,2]=imputer;
